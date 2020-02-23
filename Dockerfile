@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL Maintainer Yuhanun <y.citgez@student.utwente.nl>
+LABEL Maintainer Yuhanun Citgez <y.citgez@student.utwente.nl>
 
 # Update lists
 RUN /bin/bash -c "apt-get update"
@@ -37,10 +37,13 @@ RUN /bin/bash -c "cd /opt/verona && \
     "
 
 # Make directories for the verona bot
-RUN /bin/bash -c "mkdir -p /opt/verona-bot/scripts"
+RUN /bin/bash -c "mkdir -p /opt/verona-bot-scripts"
 
 # Copy the entrypoint over
 COPY ./scripts/run.sh /opt/verona-bot-scripts/run.sh
 
-# Set entrypoint fo when the docker container runs
-ENTRYPOINT [ "/opt/verona-bot-scripts/run.sh" ]
+# Set it to executable
+RUN /bin/bash -c "chmod 755 /opt/verona-bot-scripts/run.sh"
+
+# Set entrypoint for when the docker container runs
+# ENTRYPOINT [ "/opt/verona-bot-scripts/run.sh" ]
