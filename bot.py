@@ -2,7 +2,7 @@ import discord
 
 from discord.ext import commands
 
-bot = commands.Bot("ver ")
+bot = commands.Bot(".ver ")
 
 with open("token.txt", "r") as file:
     TOKEN = file.read()
