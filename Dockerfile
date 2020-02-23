@@ -40,7 +40,7 @@ RUN /bin/bash -c "cd /opt/verona && \
 RUN /bin/bash -c "mkdir -p /opt/verona-bot/scripts"
 
 # Copy the entrypoint over
-COPY ./scripts/run.sh /opt/verona-bot/scripts/run.sh
+COPY ./scripts/run.sh /opt/verona-bot-scripts/run.sh
 
 # Set entrypoint fo when the docker container runs
-ENTRYPOINT [ "/opt/verona-bot/scripts/run.sh" ]
+ENTRYPOINT [ "/opt/verona-bot-scripts/run.sh" ]
